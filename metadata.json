@@ -1,0 +1,7 @@
+{
+  "name": "DreamWeaver",
+  "description": "A multimodal dream journal that transcribes voice notes, generates surrealist visualizations, and provides Jungian psychological analysis.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
