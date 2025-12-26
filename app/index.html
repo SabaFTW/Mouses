@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GroundUp - A practical framework for understanding and working with AI systems">
+    <title>GroundUp - AI Usage Framework</title>
+
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Marked.js for Markdown Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1>GroundUp</h1>
+                <p class="tagline">Practical AI Framework</p>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-section">
+                    <a href="#" data-page="README.md" class="nav-link active">Home</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>📚 Documentation</h3>
+                    <a href="#" data-page="docs/README.md" class="nav-link">Overview</a>
+                    <a href="#" data-page="docs/limits.md" class="nav-link">Limits</a>
+                    <a href="#" data-page="docs/ethics.md" class="nav-link">Ethics</a>
+                    <a href="#" data-page="docs/glossary.md" class="nav-link">Glossary</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>📊 Rows - Capabilities</h3>
+                    <a href="#" data-page="docs/rows/README.md" class="nav-link">Rows Overview</a>
+                    <a href="#" data-page="docs/rows/language-modeling.md" class="nav-link">Language Modeling</a>
+                    <a href="#" data-page="docs/rows/tool-use.md" class="nav-link">Tool Use</a>
+                    <a href="#" data-page="docs/rows/reasoning.md" class="nav-link">Reasoning</a>
+                    <a href="#" data-page="docs/rows/failure-modes.md" class="nav-link">Failure Modes</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>🛤️ Paths - Strategies</h3>
+                    <a href="#" data-page="docs/paths/README.md" class="nav-link">Paths Overview</a>
+                    <a href="#" data-page="docs/paths/analytical.md" class="nav-link">Analytical</a>
+                    <a href="#" data-page="docs/paths/creative.md" class="nav-link">Creative</a>
+                    <a href="#" data-page="docs/paths/automation.md" class="nav-link">Automation</a>
+                    <a href="#" data-page="docs/paths/research.md" class="nav-link">Research</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>🏛️ Frameworks</h3>
+                    <a href="#" data-page="docs/pantheon/README.md" class="nav-link">Pantheon (Metaphor)</a>
+                    <a href="#" data-page="docs/gang/README.md" class="nav-link">Gang (Tool Comparison)</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>📝 Examples</h3>
+                    <a href="#" data-page="examples/prompts/prompt-template.md" class="nav-link">Prompt Templates</a>
+                    <a href="#" data-page="examples/workflows/research-workflow.md" class="nav-link">Research Workflow</a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="https://github.com/SabaFTW/Mouses" target="_blank" class="github-link">
+                    View on GitHub
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="mobile-header">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    ☰
+                </button>
+                <h1>GroundUp</h1>
+            </div>
+
+            <article class="content-area" id="contentArea">
+                <div class="loading">Loading...</div>
+            </article>
+        </main>
+    </div>
+
+    <!-- App Script -->
+    <script src="app.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
